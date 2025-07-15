@@ -30,11 +30,16 @@ class User {
 
     read(username) {
          
-        const rd = db.prepare('SELECT * FROM users WHERE username = ?')
+        const rd = this.db.prepare('SELECT * FROM users WHERE username = ?')
         return rd.get(username)
 
         
 
+    }
+
+    updateRecord(id, newRecord) {
+        const ud = this.db.prepare('UPDATE users SET record = ? WHERE id = ?')
+        return ud.run(newRecord, id)
     }
 }
 

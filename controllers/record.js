@@ -1,7 +1,12 @@
+import User from "../model/users.js"
+
 function recordNew(req, res) {
     
-    res.send(req.user)
-    
+    const user = new User
+    user.updateRecord(req.user.id, req.body.record)
+
+    res.sendStatus(200)
+
 }
 
 
