@@ -35,7 +35,7 @@ class User {
 
     }
 
-    read() {
+    readAll() {
 
         const rd = this.db.prepare('SELECT username, record FROM users ORDER BY record DESC')
         return rd.all()
