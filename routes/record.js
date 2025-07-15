@@ -2,7 +2,7 @@ import express from 'express'
 import { body } from 'express-validator'
 
 import { newRecord, getAllRecords } from '../controllers/record.js'
-import {authMiddleware} from '../controllers/auth.js'
+import authMiddleware from '../middlewares/authMiddleware.js'
 
 const router = express.Router()
 
