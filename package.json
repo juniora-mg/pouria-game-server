@@ -1,0 +1,26 @@
+{
+  "name": "pouria-game-server",
+  "version": "1.0.0",
+  "description": "the server of pouria-game",
+  "main": "main.js",
+  "type": "module",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/juniora-mg/pouria-game-server.git"
+  },
+  "keywords": [
+    "server"
+  ],
+  "author": "MohammadAli Arjomand",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/juniora-mg/pouria-game-server/issues"
+  },
+  "homepage": "https://github.com/juniora-mg/pouria-game-server#readme",
+  "dependencies": {
+    "express": "^5.1.0"
+  }
+}
