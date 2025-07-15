@@ -1,5 +1,5 @@
 import { authMiddleware, login, register } from './controllers/auth.js'
-import { recordNew } from './controllers/record.js';
+import { newRecord, getAllRecords } from './controllers/record.js';
 
 import express from 'express';
 import { body } from 'express-validator'
@@ -26,15 +26,12 @@ app.post('/register', [
 app.post('/record/new', [
   body('record').notEmpty().isNumeric().withMessage('record is required and must be numeric'),
   authMiddleware
-], recordNew)
+], newRecord)
+
+// get all records
+app.get('/record', getAllRecords)
 
 // Start the server
 app.listen(port, () => {
   console.log(`http://localhost:${port}`);
-});
-
-
-
-
-
-// eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6InJhbXoiLCJpYXQiOjE3NTI1ODQ2MjcsImV4cCI6MTc1MjY3MTAyN30.RDPrbkd1eKlztr-24NGdP4r0TDZU7BtAvWK72v1osO8
+})

@@ -33,7 +33,12 @@ class User {
         const rd = this.db.prepare('SELECT * FROM users WHERE username = ?')
         return rd.get(username)
 
-        
+    }
+
+    read() {
+
+        const rd = this.db.prepare('SELECT username, record FROM users ORDER BY record DESC')
+        return rd.all()
 
     }
 

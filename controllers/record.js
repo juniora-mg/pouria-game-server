@@ -1,6 +1,13 @@
 import User from "../model/users.js"
 
-function recordNew(req, res) {
+function getAllRecords(req, res) {
+    const user = new User
+    let ans = user.read()
+
+    res.send(ans)
+} 
+
+function newRecord(req, res) {
     
     const user = new User
     user.updateRecord(req.user.id, req.body.record)
@@ -10,4 +17,4 @@ function recordNew(req, res) {
 }
 
 
-export {recordNew}
+export {newRecord, getAllRecords}
