@@ -1,7 +1,5 @@
 import jwt from 'jsonwebtoken'
-import dotenv from 'dotenv'
 
-dotenv.config()
 
 function authMiddleware(req, res, next) {
     let authHeader = req.headers['authorization']

@@ -1,9 +1,6 @@
 import User from '../model/users.js'
 import bcrypt from 'bcrypt'
 import jwt from 'jsonwebtoken'
-import dotenv from 'dotenv'
-
-dotenv.config({quiet: true})
 
 import { validationResult } from 'express-validator'
 
