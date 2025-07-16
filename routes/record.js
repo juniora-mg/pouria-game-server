@@ -7,7 +7,7 @@ import authMiddleware from '../middlewares/authMiddleware.js'
 const router = express.Router()
 
 // set new record
-router.post('/new', [
+router.post('/update', [
     body('record').notEmpty().isNumeric().withMessage('record is required and must be numeric'),
     authMiddleware
   ], newRecord)
