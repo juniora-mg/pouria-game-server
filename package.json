@@ -22,6 +22,7 @@
   "homepage": "https://github.com/juniora-mg/pouria-game-server#readme",
   "dependencies": {
     "bcrypt": "^6.0.0",
+    "better-sqlite3": "^12.2.0",
     "dotenv": "^17.2.0",
     "express": "^5.1.0",
     "express-validator": "^7.2.1",
