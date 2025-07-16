@@ -26,7 +26,7 @@ function login(req, res) {
                 return res.send({error: "password is incorrect"})
             }
             
-            const token = jwt.sign({id: result.id}, process.env.SECRET_KEY, {})
+            const token = jwt.sign({id: result.id}, process.env.SECRET_KEY, {expiresIn: '30d'})
             res.json({token})
         })
 
@@ -47,12 +47,9 @@ function register(req, res) {
     user.insert(username, password, record)
         .then(info => {
             res.send({
-                code: 200,
-                data: {
-                    id: info.lastInsertRowid,
-                    username,
-                    record
-                }
+                id: info.lastInsertRowid,
+                username,
+                record
             })
         })
         .catch(() => {
